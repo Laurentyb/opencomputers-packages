@@ -1,0 +1,16 @@
+To communicate with the DNS server add the following
+
+local dns = require('dns')
+
+dns.setAddress('[DNS server address]')
+dns.setPort('42069')
+
+reply = dns.lookup('[server to lookup name]')
+
+if reply == nil then
+  print("Address not found.")
+elseif reply == false then
+  print("Could not connect to DNS Server.")
+else
+  print("DNS OK, Response:" .. reply)
+end
